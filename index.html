@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>:newspaper:New York Times Search</h1>
+        <div>
+            <style>
+                header {
+                    background: #2B16A1;
+                }
+
+                h1 {
+                    color: aliceblue;
+                }
+
+                body {
+                    text-align: center;
+                }
+
+                h1 {
+                    text-align-last: center;
+                    color: #FEFEFE;
+                    background-color: #21325A;
+                    border-top: #21325a, 65px;
+                    border-left: #21325A, 391px;
+                    border-right: #21325A, 391px;
+                    border-bottom: #21325A, 65px;
+                    border-bottom: 65px;
+                    padding-bottom: #21325A, 65px;
+                }
+            </style>
+            <li></li>
+            <div>
+                search term <input type="text">
+            </div>
+            <div>
+                record number <input type="text">
+            </div>
+            <div>
+                start year <input type="text">
+            </div>
+            <div>
+                end year <input type="text">
+            </div>
+
+
+
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script type="text/javascript">
+                // The below code fills in the first row of the table
+
+                var searchTERM = "election";
+                var startYear = "2008-11-20";
+                var endYear = "2008";
+                // var searchTERM = $("#searchTERM").val().trim();
+                var recordNUM = 5;
+                // var startYear = $("#startYear").val().trim();
+                // var endYear = $("#endYear").val().trim();
+
+                var queryURL1 = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + searchTERM + "fq=pub_date:(" + startYear + ")&api-key=eakrI9uCWLyVv9zV1dfanSkmrD1A33Jc";
+
+                $.ajax({
+                    url: queryURL1,
+                    method: "GET",
+                }).then(function (response) {
+                    console.log(response);
+                });
+
+
+
+            // var div = $("<div>").text(response);
+            // $("container").append(div);
+
+            </script>
+        </div>
+
+</body>
+
+</html>
